@@ -40,6 +40,7 @@ function shadowClone3(targetSr) {
 function deepClone(targetSr) {
   let cloneSr = targetSr instanceof Array ? [] : {}
   for (let key in targetSr) {
+    // 此if语句可用三目表达式优化使其更简洁
     if (typeof targetSr[key] === 'object') {
       cloneSr[key] = deepClone(targetSr[key])
     } else {
